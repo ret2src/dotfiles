@@ -20,6 +20,7 @@ if [ -f /etc/os-release ]; then
         mv ~/.oh-my-zsh ~/.oh-my-zsh.bak.d
 
         # Install oh-my-zsh.
+        unset ZSH
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
         # Install powerlevel10k.
