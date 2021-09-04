@@ -15,6 +15,10 @@ if [ -f /etc/os-release ]; then
                             zsh \
                             neovim \
                             tmux
+
+        # Backup already existing files and folders.
+        mv ~/.oh-my-zsh ~/.oh-my-zsh.bak.d
+
         # Install oh-my-zsh.
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
