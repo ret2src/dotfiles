@@ -66,6 +66,9 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 " Statusline generator for tmux.
 Plug 'edkolev/tmuxline.vim'
 
+" Continuously updated session files (for tmux-resurrect).
+Plug 'tpope/vim-obsession'
+
 " Initialize plugin system.
 call plug#end()
 
@@ -96,7 +99,7 @@ autocmd InsertLeave * :set norelativenumber
 let mapleader = ","
 
 " Quickly open or reload vim configuration file.
-nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 
