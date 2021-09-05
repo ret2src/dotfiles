@@ -13,6 +13,8 @@ if [ -f /etc/os-release ]; then
                             xclip \
                             xsel \
                             zsh \
+                            thefuck \
+                            tldr \
                             neovim \
                             tmux
 
