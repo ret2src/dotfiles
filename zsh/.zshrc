@@ -82,6 +82,10 @@ plugins=(git tmux safe-paste thefuck colored-man-pages command-not-found)
 # Automatically attach to tmux.
 ZSH_TMUX_AUTOSTART=true
 
+# Do not automatically connect to tmux sessions.
+# This allows us to have one session per terminal window.
+ZSH_TMUX_AUTOCONNECT=false
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
