@@ -69,6 +69,9 @@ Plug 'edkolev/tmuxline.vim'
 " Continuously updated session files (for tmux-resurrect).
 Plug 'tpope/vim-obsession'
 
+" Distraction-free writing.
+Plug 'junegunn/goyo.vim'
+
 " Initialize plugin system.
 call plug#end()
 
