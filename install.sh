@@ -12,6 +12,7 @@ if [ -f /etc/os-release ]; then
                             curl \
                             xclip \
                             xsel \
+                            stow \
                             zsh \
                             thefuck \
                             tldr \
