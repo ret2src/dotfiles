@@ -34,6 +34,9 @@ if [ -f /etc/os-release ]; then
 
         # Backup zsh configuration.
         mv ~/.zshrc ~/.zshrc.bak
+        
+        # Backup bash configuration.
+        mv ~/.bashrc ~/.bashrc.bak
 
         # Make zsh the default shell.
         chsh -s $(which zsh)
