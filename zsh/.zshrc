@@ -116,3 +116,9 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# pipx stuff.
+export PATH="$PATH:$HOME/.local/bin"
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
