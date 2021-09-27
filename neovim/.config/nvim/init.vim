@@ -165,9 +165,6 @@ map <Leader>k <Plug>(easymotion-k)
 " vim-better-whitespace
 """""""""""""""""""""""
 
-" Highlight extra whitespace by default.
-let g:better_whitespace_enabled=1
-
 " Automatically strip extra whitespace on save.
 let g:strip_whitespace_on_save=1
 
