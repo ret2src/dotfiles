@@ -57,9 +57,6 @@ Plug 'vim-airline/vim-airline'
 " Themes for vim-airline.
 Plug 'vim-airline/vim-airline-themes'
 
-" Highlight trailing whitespace.
-Plug 'ntpeters/vim-better-whitespace'
-
 " Accelerate writing HTML and CSS.
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 
@@ -160,13 +157,6 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions.
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-
-" vim-better-whitespace
-"""""""""""""""""""""""
-
-" Automatically strip extra whitespace on save.
-let g:strip_whitespace_on_save=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
