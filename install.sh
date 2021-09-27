@@ -17,7 +17,8 @@ if [ -f /etc/os-release ]; then
                             thefuck \
                             tldr \
                             neovim \
-                            tmux
+                            tmux \
+                            pipx
 
         # Backup already existing files and folders.
         mv ~/.oh-my-zsh ~/.oh-my-zsh.bak.d
@@ -34,7 +35,7 @@ if [ -f /etc/os-release ]; then
 
         # Backup zsh configuration.
         mv ~/.zshrc ~/.zshrc.bak
-        
+
         # Backup bash configuration.
         mv ~/.bashrc ~/.bashrc.bak
 
