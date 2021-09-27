@@ -77,7 +77,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux safe-paste thefuck colored-man-pages command-not-found zsh-autosuggestions)
+plugins=(git tmux safe-paste thefuck colored-man-pages command-not-found zsh-autosuggestions zsh-syntax-highlighting)
+
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [[ "$NAME" =~ "Arch" ]]; then
+        # Handler for 'command-not-found' plugin. Requires pkgfile:
+        #     $ sudo pacman -S pkgfile
+        #     $ sudo pkgfile -u
+        source /usr/share/doc/pkgfile/command-not-found.zsh
+    fi
+fi
 
 # Automatically attach to tmux.
 ZSH_TMUX_AUTOSTART=true
@@ -119,6 +129,6 @@ source $ZSH/oh-my-zsh.sh
 
 # pipx stuff.
 export PATH="$PATH:$HOME/.local/bin"
-autoload -U bashcompinit
+autoload bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete pipx)"
