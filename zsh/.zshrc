@@ -79,16 +79,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux safe-paste thefuck colored-man-pages command-not-found zsh-autosuggestions zsh-syntax-highlighting)
 
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    if [[ "$NAME" =~ "Arch" ]]; then
-        # Handler for 'command-not-found' plugin. Requires pkgfile:
-        #     $ sudo pacman -S pkgfile
-        #     $ sudo pkgfile -u
-        source /usr/share/doc/pkgfile/command-not-found.zsh
-    fi
-fi
-
 # Automatically attach to tmux.
 ZSH_TMUX_AUTOSTART=true
 
@@ -127,8 +117,26 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pipx stuff.
-export PATH="$PATH:$HOME/.local/bin"
-autoload bashcompinit
-bashcompinit
-eval "$(register-python-argcomplete pipx)"
+
+# Distributions-specific code.
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [[ "$NAME" =~ "Arch" ]]; then
+        # Handler for 'command-not-found' plugin. Requires pkgfile:
+        #     $ sudo pacman -S pkgfile
+        #     $ sudo pkgfile -u
+        source /usr/share/doc/pkgfile/command-not-found.zsh
+
+        # pipx stuff.
+        export PATH="$PATH:$HOME/.local/bin"
+        autoload bashcompinit
+        bashcompinit
+        eval "$(register-python-argcomplete pipx)"
+    elif [[ "$NAME" =~ "Kali" ]]; then
+        # pipx stuff.
+        export PATH="$PATH:$HOME/.local/bin"
+        autoload bashcompinit
+        bashcompinit
+        eval "$(register-python-argcomplete3 pipx)"
+    fi
+fi
