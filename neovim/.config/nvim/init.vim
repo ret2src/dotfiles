@@ -61,7 +61,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 
 " Statusline generator for tmux.
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 
 " Continuously updated session files (for tmux-resurrect).
 Plug 'tpope/vim-obsession'
